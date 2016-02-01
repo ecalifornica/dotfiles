@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 syntax on
 filetype indent on
 filetype indent plugin on
