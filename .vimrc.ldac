@@ -1,20 +1,20 @@
 set nocompatible                  " be iMproved
 filetype off                      " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-let g:vundle_default_git_proto = 'git'
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"let g:vundle_default_git_proto = 'git'
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+"Bundle 'gmarik/vundle'
 
 " My Bundles here:
 "
 " original repos on github
 "Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'nvie/vim-flake8'
+"Bundle 'Lokaltog/vim-powerline'
+"Bundle 'nvie/vim-flake8'
 "Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on         " required!
