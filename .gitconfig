@@ -19,7 +19,7 @@
 [difftool]
     prompt = false
 [alias]
-    log = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate --pretty=format:\"%x09%C(yellow)%h %C(cyan)%ad %C(red)%an%C(bold green)%d%Creset %s\"
+    l = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate --pretty=format:\"%x09%C(yellow)%h %C(cyan)%ad %C(red)%an%C(bold green)%d%Creset %s\"
     #merges = log --cherry-pick --date=short --pretty=format:"%ad %h %d %s (%an)" --merges
 [credential]
     helper = cache --timeout=86400
