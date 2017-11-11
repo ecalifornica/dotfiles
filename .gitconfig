@@ -2,18 +2,18 @@
 	email = queenin@gmail.com
 	name = Robert Queenin
 [core]
-    pager = diff-so-fancy | less --tabs=4 -RFX
-    excludesfile = ~/.config/gitignore
+    pager = ~/.config/git/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
+    excludesfile = ~/.config/git/ignore
     sshCommand = "ssh -i ~/.ssh/gitlab"
 [push]
 	default = simple
 [color]
+    ui = true
+    pager = true
     diff = auto
     status = auto
     branch = auto
     interactive = auto
-    ui = true
-    pager = true
 [diff]
     tool = vimdiff
 [difftool]
