@@ -3,3 +3,22 @@
 	name = Robert Queenin
 [push]
 	default = simple
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    pp = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate --pretty=format:\"%x09%C(yellow)%h %C(cyan)%ad %C(red)%an%C(bold green)%d%Creset %s\"
+    #merges = log --cherry-pick --date=short --pretty=format:"%ad %h %d %s (%an)" --merges
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFX
+    excludesfile = ~/.config/git/ignore
+[credential]
+    helper = cache --timeout=86400
