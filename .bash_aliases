@@ -1,1 +1,3 @@
-alias glog='git log --graph --decorate --oneline --all'
+#alias l='ls -CF'
+#alias la='ls -A'
+alias ll="ls -alFhG"
