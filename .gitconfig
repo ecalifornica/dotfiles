@@ -1,10 +1,12 @@
 [user]
 	email = queenin@gmail.com
 	name = Robert Queenin
+	signingkey = A229863785CED625
 [core]
     pager = ~/.config/git/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
     excludesfile = ~/.config/git/ignore
-    sshCommand = "ssh -i ~/.ssh/gitlab"
+    sshCommand = "ssh -i ~/.ssh/github"
+    editor = /usr/bin/vim
 [push]
 	default = simple
 [color]
@@ -20,8 +22,9 @@
     prompt = false
 [alias]
     l = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate --pretty=format:\"%x09%C(yellow)%h %C(cyan)%ad %C(red)%an%C(bold green)%d%Creset %s\"
+    s = status -uno -s
     #merges = log --cherry-pick --date=short --pretty=format:"%ad %h %d %s (%an)" --merges
 [credential]
-    helper = cache --timeout=86400
+    helper = osxkeychain
 [include]
     path = ~/.gitconfig.local
