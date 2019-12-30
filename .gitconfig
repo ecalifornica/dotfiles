@@ -3,7 +3,7 @@
 	name = Robert Queenin
 	signingkey = A229863785CED625
 [core]
-    pager = ~/.config/git/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
+    #pager = ~/.config/git/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
     excludesfile = ~/.config/git/ignore
     sshCommand = "ssh -i ~/.ssh/github"
     editor = /usr/bin/vim
