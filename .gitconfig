@@ -1,5 +1,6 @@
 [user]
-	email = queenin@gmail.com
+    #email = queenin@gmail.com
+    email = 2177841+ecalifornica@users.noreply.github.com
 	name = Robert Queenin
 	signingkey = A229863785CED625
 [core]
