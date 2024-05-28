@@ -1,30 +1,36 @@
 [user]
-	email = queenin@gmail.com
+	email = 2177841+ecalifornica@users.noreply.github.com
 	name = Robert Queenin
-	signingkey = A229863785CED625
+	signingkey = DEA446DD1346D9D3
 [core]
-    pager = ~/.config/git/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
-    excludesfile = ~/.config/git/ignore
-    sshCommand = "ssh -i ~/.ssh/github"
-    editor = /usr/bin/vim
+  pager = ~/.local/bin/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = ~/.config/git/ignore
+  sshCommand = "ssh -i ~/.ssh/github"
+  editor = /usr/bin/vim
+[commit]
+  gpgsign = true
 [push]
 	default = simple
+	autoSetupRemote = true
 [color]
-    ui = true
-    pager = true
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
+  ui = true
+  pager = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [difftool]
-    prompt = false
+  prompt = false
+[difftool.meld]
+	cmd = flatpak run org.gnome.meld \"$LOCAL\" \"$REMOTE\"
 [alias]
-    l = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate --pretty=format:\"%x09%C(yellow)%h %C(cyan)%ad %C(red)%an%C(bold green)%d%Creset %s\"
-    s = status -uno -s
-    #merges = log --cherry-pick --date=short --pretty=format:"%ad %h %d %s (%an)" --merges
+  l = log --graph --all --full-history --date-order --date=short --color --abbrev-commit --decorate --pretty=format:\"%x09%C(yellow)%h %G? %C(cyan)%ad %C(red)%an%C(blue)%d%Creset %s\"
+  s = status -uno -s
 [credential]
-    helper = osxkeychain
+	credentialStore = gpg
 [include]
-    path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
