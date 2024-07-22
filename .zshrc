@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -106,7 +107,7 @@ fi
 setopt no_share_history
 unsetopt share_history
 
-PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%T}] '$PROMPT
+export XDG_CONFIG_HOME="$HOME"/.config
 
 # zsh-vi-mode
 # https://github.com/jeffreytse/zsh-vi-mode
@@ -117,14 +118,20 @@ zvm_after_select_vi_mode_commands=()
 zvm_before_lazy_keybindings_commands=()
 zvm_after_lazy_keybindings_commands=()
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
+# atuin
 . "$HOME/.atuin/bin/env"
 
+# cargo
 . "$HOME/.cargo/env"
 
-export XDG_CONFIG_HOME="$HOME"/.config
-
+# nvm
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# vd
+alias vd='PIPENV_PIPFILE=$HOME/projects/vd/Pipfile pipenv run vd -f pandas'
+
+if [ -f "$HOME/.zshrc.local" ]; then
+  source "$HOME/.zshrc.local"
+fi
