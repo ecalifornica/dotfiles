@@ -124,3 +124,15 @@ zvm_before_select_vi_mode_commands=()
 zvm_after_select_vi_mode_commands=()
 zvm_before_lazy_keybindings_commands=()
 zvm_after_lazy_keybindings_commands=()
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+. "$HOME/.atuin/bin/env"
+
+. "$HOME/.cargo/env"
+
+export XDG_CONFIG_HOME="$HOME"/.config
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
