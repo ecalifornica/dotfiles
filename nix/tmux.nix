@@ -25,7 +25,13 @@
       }
       {
         plugin = pkgs.tmuxPlugins.continuum;
+        # continuum adds its save call to status-right when it loads. On a
+        # reload it can skip that step, so a reload must not reset status-right.
         extraConfig = ''
+          set -g @bar-right " #{?session_many_attached,⚇ ,}#{?pane_synchronized,⚏ ,}| %Y %m%d %H%M | %U "
+          %if "#{==:#{m:*continuum_save*,#{status-right}},0}"
+          set -g status-right "#{T:@bar-right}"
+          %endif
           set -g @continuum-restore 'on'
         '';
       }
@@ -56,6 +62,24 @@
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
+
+      set -g status-interval 15
+      set -g status-style "fg=#8a8a8a,bg=#080808"
+      set -g status-left "#[fg=#080808,bg=#8a8a8a,bold] #S #[default] "
+      set -g status-left-length 100
+      set -g status-right-length 100
+      setw -g window-status-format "#{?window_last_flag, ,}#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}#{?window_last_flag, ,}"
+      setw -g window-status-current-format " #I #W*#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,} "
+      setw -g window-status-style "fg=#8a8a8a,bg=#080808"
+      setw -g window-status-current-style "fg=#080808,bg=#8a8a8a,bold"
+      setw -g window-status-last-style "fg=#8a8a8a,bg=#303030"
+      setw -g window-status-activity-style "underscore"
+      setw -g window-status-bell-style "fg=#ffff00,blink,bold"
+      set -g pane-border-style "fg=#303030"
+      set -g pane-active-border-style "fg=#{?pane_in_mode,#ffb000,#{?synchronize-panes,#d70000,#00afff}}"
+      set -g message-style "fg=#080808,bg=#8a8a8a,bold"
+      set -g message-command-style "fg=#ffff00,bg=#080808,bold"
+      set -g mode-style "fg=#080808,bg=#ffb000"
     '';
   };
 }
