@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -9,7 +9,10 @@
       save = 0;
       share = false;
     };
-    initContent = "unset HISTFILE";
+    initContent = ''
+      unset HISTFILE
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    '';
 
     shellAliases = {
       l = "ls -lah";
